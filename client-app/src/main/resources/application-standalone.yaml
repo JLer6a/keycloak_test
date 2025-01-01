@@ -1,0 +1,30 @@
+selmag:
+  services:
+    catalogue:
+      uri: http://localhost:8081
+      registration-id: keycloak
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5433/manager
+    username: manager
+    password: manager
+  security:
+    oauth2:
+      client:
+        provider:
+          keycloak:
+            issuer-uri: http://localhost:8082/realms/shop
+            user-name-attribute: preferred_username
+        registration:
+          keycloak:
+            client-id: shop-app
+            client-secret: uSiyJX3T99neHiJaqlPfnmQTmpQwYwLu
+            scope:
+              - openid
+              - microprofile-jwt
+
+keycloak:
+  realm: shop
+  admin:
+    username: admin-username
+    password: admin-password

@@ -1,0 +1,32 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/catalogue
+    username: catalogue
+    password: catalogue
+  flyway:
+    schemas:
+      - public
+      - catalogue
+    enabled: true
+    locations: db/migration
+  jpa:
+    show-sql: true
+  security:
+    oauth2:
+      client:
+        provider:
+          keycloak:
+            issuer-uri: http://localhost:8082/realms/shop
+            user-name-attribute: preferred_username
+        registration:
+          keycloak:
+            client-id: shop-app
+            client-secret: uSiyJX3T99neHiJaqlPfnmQTmpQwYwLu
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:8082/realms/shop
+server:
+  port: 8081
+logging:
+  level:
+    sql: info
