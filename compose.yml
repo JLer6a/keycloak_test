@@ -11,16 +11,6 @@ services:
     ports:
       - "5432:5432"
 
-  db_manager:
-    container_name: db_manager
-    image: postgres:latest
-    environment:
-      POSTGRES_USER: manager
-      POSTGRES_PASSWORD: manager
-      POSTGRES_DB: manager
-    ports:
-      - "5433:5432"
-
   postgres:
     image: postgres:latest
     container_name: postgres
