@@ -26,4 +26,8 @@ public class Product {
     @Column(name = "c_details")
     @Size(max = 1000)
     private String details;
+
+    @Column(name = "c_owner")
+    @Size(max = 50)
+    private String owner;
 }

@@ -21,7 +21,7 @@ spring:
         registration:
           keycloak:
             client-id: shop-app
-            client-secret: uSiyJX3T99neHiJaqlPfnmQTmpQwYwLu
+            client-secret: '**********'
       resourceserver:
         jwt:
           issuer-uri: http://localhost:8082/realms/shop

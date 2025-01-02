@@ -18,7 +18,7 @@ spring:
         registration:
           keycloak:
             client-id: shop-app
-            client-secret: uSiyJX3T99neHiJaqlPfnmQTmpQwYwLu
+            client-secret: '**********'
             scope:
               - openid
               - microprofile-jwt

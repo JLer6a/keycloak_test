@@ -26,8 +26,8 @@ public class DefaultProductService implements ProductService {
 
     @Override
     @Transactional
-    public Product createProduct(String title, String details) {
-        return this.productRepository.save(new Product(null, title, details));
+    public Product createProduct(String title, String details, String name) {
+        return this.productRepository.save(new Product(null, title, details, name));
     }
 
     @Override
@@ -51,5 +51,14 @@ public class DefaultProductService implements ProductService {
     @Transactional
     public void deleteProduct(Integer id) {
         this.productRepository.deleteById(id);
+    }
+
+    @Override
+    public Iterable<Product> findProductsByUserAndTitle(String username, String filter) {
+        if (filter != null && !filter.isEmpty()) {
+            return productRepository.findProductsByOwnerAndTitle(username, filter);
+        } else {
+            return productRepository.findProductsByOwner(username);
+        }
     }
 }

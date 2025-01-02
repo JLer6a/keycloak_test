@@ -1,4 +1,6 @@
+name: test
 services:
+
   db_catalogue:
     container_name: db_catalogue
     image: postgres:latest
