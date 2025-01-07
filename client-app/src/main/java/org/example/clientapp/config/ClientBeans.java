@@ -16,10 +16,10 @@ public class ClientBeans {
 
     @Bean
     public RestClientProductsRestClient productsRestClient(
-            @Value("${selmag.services.catalogue.uri:http://localhost:8081}") String catalogueBaseUri,
+            @Value("${shop.services.catalogue.uri:http://localhost:8081}") String catalogueBaseUri,
             ClientRegistrationRepository clientRegistrationRepository,
             OAuth2AuthorizedClientRepository authorizedClientRepository,
-            @Value("${selmag.services.catalogue.registration-id:keycloak}") String registrationId) {
+            @Value("${shop.services.catalogue.registration-id:keycloak}") String registrationId) {
         return new RestClientProductsRestClient(RestClient.builder()
                 .baseUrl(catalogueBaseUri)
                 .requestInterceptor(
